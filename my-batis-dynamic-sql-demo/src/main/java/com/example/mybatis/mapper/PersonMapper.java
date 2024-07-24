@@ -20,7 +20,7 @@ import static org.mybatis.dynamic.sql.SqlBuilder.isIn;
 import static org.mybatis.dynamic.sql.select.SelectDSL.select;
 
 @Mapper
-public interface PersonMapper  {
+public interface PersonMapper {
 
     @SelectProvider(type = SqlProviderAdapter.class, method = "select")
     @Results(id = "PersonResult", value = {
@@ -49,11 +49,11 @@ public interface PersonMapper  {
                 PersonDynamicSqlSupport.addressId
         ).from(PersonDynamicSqlSupport.person);
 
-        // Use the custom selectList method
+
         return MyBatis3Utils.selectList(
-                this::selectMany,  // Method reference to selectMany
-                start,  // QueryExpressionDSL<SelectModel>
-                completer  // SelectDSLCompleter
+                this::selectMany,
+                start,
+                completer
         );
     }
 
