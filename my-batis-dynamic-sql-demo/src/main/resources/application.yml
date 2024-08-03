@@ -1,6 +1,7 @@
 spring:
   datasource:
     url: jdbc:h2:mem:persons_db
+    dr
   jpa:
     show-sql: true
     hibernate:
@@ -10,3 +11,7 @@ spring:
       enabled: true
 server:
   port: 4466
+
+
+mybatis:
+  configuration:
